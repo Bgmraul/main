@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'ebill/css/prueba.css' %}">
+    <title>
+        {% block title %}
+            E - Bill
+        {% endblock title %}
+    </title>
+</head>
+<body>
+<div class="container">  
+<div class="jumbotron jumbotron-fluid inicio">
+    <div class="container">
+        <div class="cardbody">
+            <h1 class="display-2">E-Bill</h1>
+            <p class="lead">Gestiona tus clientes y facturas desde un sólo lugar.</p>
+        </div>
+    </div>
+</div>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card text-center">
+        <div class="card-body">
+          <h3 class="card-title">Clientes</h3>
+          <p class="card-text">Accede a todos tus clientes.</p>
+          <a href="/clientes" class="btn btn-primary">Acceder</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card text-center">
+        <div class="card-body">
+          <h3 class="card-title">Facturas</h3>
+          <p class="card-text">Accede a todas las facturas.</p>
+          <a href="/facturas" class="btn btn-primary">Acceder</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>  
+</body>
+</html>

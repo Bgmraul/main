@@ -1,0 +1,40 @@
+{% extends 'ebill/base.html' %}
+
+{% block title %} Clientes {% endblock title %}
+
+{% block content %}
+
+<div class="jumbotron jumbotron-fluid clientes">
+    <div class="container">
+        <div class="cardbody">
+            <h1 class="display-4">Clientes</h1>
+            <p class="lead">Listado con todos los clientes.</p>
+        </div>
+
+    </div>
+  </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre Cliente</th>
+                <th>NIF</th>
+                <th>Empresa</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for c in cliente %}
+                
+                    <tr>
+                        <td>{{ c.nombre }} {{ c.apellidos }}</td>
+                        <td>{{ c.nif }}</td>
+                        <td>{{ c.empresa }}</td>
+                        <td><a href="{% url 'detalle_cliente' c.pk %}">Ver Más</a></td>
+                    </tr>
+                </a>
+            {% endfor %}
+        </tbody>
+    </table>
+ 
+{% endblock content %}

@@ -1,0 +1,42 @@
+{% extends 'ebill/base.html' %}
+
+{% block title %} Factura {% endblock title %}
+
+{% block content %}
+
+<div class="jumbotron jumbotron-fluid detalle_factura">
+    <div class="container">
+      <h1 class="display-4">{{factura.cliente.empresa}}</h1>
+      <p class="card-text">Nombre: {{factura.cliente.nombre}} {{factura.cliente.apellidos}}</p>
+      <p class="card-text">NIF: {{factura.cliente.nif}}</p>
+    </div>
+  </div>
+    <p class="card-text"><small class="text-muted">ID Factura: {{factura.pk}}</small></p>
+    <p class="card-text"><small class="text-muted">{{factura.fecha_emision}}</small></p>
+    <table class="table">
+        <thead class="thead-light">
+            <tr>
+                <th>Nombre Producto</th>
+                <th>Precio Unitario</th>
+                <th>Unidades</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for linea in linea_factura %}
+                <tr>
+                    <td>{{ linea.producto_nombre }}</td>
+                    <td>{{ linea.precio_unitario }} €</td>
+                    <td>{{ linea.unidades }}</td>
+                    <td>{{ linea.precio_real }} €</td>
+                </tr>
+                
+            {% endfor %}
+                <tr class="table-secondary">
+                    <td colspan="3">Total:</td>
+                    <td>5456</td>
+                </tr>
+        </tbody>
+    </table>
+ 
+{% endblock content %}

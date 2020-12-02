@@ -1,0 +1,35 @@
+{% extends 'ebill/base.html' %}
+
+{% block title %} Factura {% endblock title %}
+
+{% block content %}
+
+<div class="jumbotron jumbotron-fluid facturas">
+    <div class="container">
+      <h1 class="display-4">Facturas</h1>
+      <p class="lead">Listado de todas las facturas.</p>
+    </div>
+  </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Número de factura</th>
+                <th>Fecha de emisión</th>
+                <th>Cliente</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for f in factura %}
+                <tr>
+                    <td>{{ f.id_factura }}</td>
+                    <td>{{ f.fecha_emision }}</td>
+                    <td>{{ f.cliente }}</td>
+                    <td><a href="{% url 'detalle_factura' f.pk %}">Detalles</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+ 
+{% endblock content %}

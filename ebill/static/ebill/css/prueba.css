@@ -1,0 +1,28 @@
+.jumbotron{
+    margin-top: 5vh;
+}
+.inicio{
+    background-image: url(/static/ebill/img/fondo-ebill.jpg);
+    background-position: 100% 100%;
+    color: white;
+}
+.inicio .cardbody{
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 2.5%;
+}
+
+.clientes{
+    background-image: url(/static/ebill/img/fondo-clientes.jpg);
+    background-position: 100% 100%; 
+}
+
+.facturas{
+    background-image: url(/static/ebill/img/fondo-facturas.jpg);
+    background-position: 100% 100%; 
+}
+
+.detalle_cliente, .detalle_factura{
+    background-image: url(/static/ebill/img/fondoCliente.jpg);
+    background-position: 100% 100%; 
+    background-repeat: no-repeat;
+}
